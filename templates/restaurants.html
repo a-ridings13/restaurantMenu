@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> {{restaurant.name}} :: Menu </title>
+        <title> Restaurants </title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -19,11 +19,9 @@
     <body>
         <div class="container">
             <div class="row" style="text-align: center">
-                <h1>{{restaurant.name}} - Menu</h1>
-                <a href="{{ url_for('additemtomenu', restaurant_id=restaurant.id) }}"><button type='button' class="btn btn-info" style="float: right"><span class="glyphicon glyphicon-plus"></span> Add New Menu Item</button></a>
-                <a href="{{ url_for('allrestaurants') }}"><button type='button' class="btn btn-info" style="float: left"><span class="glyphicon glyphicon-home"></span> Return To Restaurants</button></a>
+                <h1>Restaurants</h1>
+                <a href="{{url_for('addrestaurant')}}"><button type='button' class="btn btn-info" style="float: right"><span class="glyphicon glyphicon-plus"></span>Add New Restaurant</button></a>
             </div>
-            <br>
             <div class="flash">
                 {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -37,24 +35,21 @@
             {% endwith %}
             </div>
 
-
-            {% for i in items %}
+            <br>
+            {% for r in restaurants %}
         <div class="row">
+
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>{{i.name}}</strong></h3>
+                <div class="panel-body">
+                    <h3><strong> {{r.name}} </strong></h3>
+                    <a href="{{ url_for('deleterestaurant', restaurant_id=r.id) }}"><button type="button" class="btn btn-danger" style="float: right;">Delete</button></a>
+                    <a href="{{ url_for('editrestaurant', restaurant_id=r.id) }}"><button type="button" class="btn btn-warning" style="float: right;">Edit</button></a>
+                    <a href="{{ url_for('restaurantMenu', restaurant_id=r.id, menu_id=restaurant_id) }}"><button type="button" class="btn btn-success" style="float: left;">View Menu</button></a>
                 </div>
-                    <div class="panel-body">
-                        <p style="text-align:right"><strong>Price:</strong> {{i.price}}</p>
-                        <p><strong>Description:</strong> {{i.description}}</p>
-                        <a href="{{ url_for('deletemenuitem', menu_id=i.id, restaurant_id=restaurant.id) }}"><button type="button" class="btn btn-danger" style="float: right;">Delete</button></a>
-                        <a href="{{ url_for('editmenuitem', menu_id=i.id, restaurant_id=restaurant.id) }}"><button type="button" class="btn btn-warning" style="float: right;">Edit</button></a>
-                    </div>
-                    <div class="panel-footer">{{i.course}}</div>
             </div>
+
         </div>
             {% endfor %}
-
     </body>
     <footer>
         <p style="text-align:center;">&copy; 2019 - Austin Ridings</p>

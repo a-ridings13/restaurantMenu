@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> Menu :: Edit Item </title>
+        <title> Menu :: Add Item </title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -19,31 +19,31 @@
     <body>
         <div class="container">
             <div class="row" style="text-align: center">
-                <h1>Edit Menu Item</h1>
+                <h1>Add Menu Item</h1>
             </div>
             <br>
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Edit {{item.name}}</h3>
+                    <h3>Add Menu Item</h3>
                 </div>
                 <div class="panel-body">
                     <div class="well well-sm">
                         <form action="{{url_for('additemtomenu', restaurant_id=restaurant_id)}}" method="POST">
                             <div class="form-group">
                                 <h4>Name:</h4>
-                                <input type="text" length="30" name="name" placeholder="{{item.name}}" required><br>
+                                <input type="text" length="30" name="name" required><br>
                                 <h4>Description:</h4>
-                                <input type="text" length="30" name="description" placeholder="{{item.description}}" required><br>
+                                <input type="text" length="30" name="description" required><br>
                                 <h4>Price:</h4>
-                                <input type="text" length="30" name="price" placeholder="{{item.price}}" required><br>
+                                <input type="text" length="30" name="price" required><br>
                                 <h4>Course:</h4>
-                                <input type="text" length="30" name="course" placeholder="{{item.course}}" required><br>
-                                <input type="submit" class="btn btn-success" style="float: right;" value="Save!"><br>
+                                <input type="text" length="30" name="course" required><br>
+                                <input type="submit" class="btn btn-success" style="float: right;" value="Add!"><br>
                             </div>
                         </form>
                     </div>
-                    <a href="{{url_for('restaurantMenu', menu_id=item.id, restaurant_id = item.restaurant_id)}}"><button type="button" class="btn btn-primary" style="float: right;">Cancel</button></a>
+                    <a href="{{url_for('restaurantMenu', restaurant_id=restaurant_id)}}"><button type="button" class="btn btn-primary" style="float: right;">Cancel</button></a>
                 </div>
             </div>
 
