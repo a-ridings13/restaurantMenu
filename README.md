@@ -51,6 +51,14 @@ column as a ForeignKey.
    - /restaurants/<int:restaurant_id>/menu/JSON
    - /restaurants/<int:restaurant_id>/menu/<int:menu_id>/JSON
    
+   To read the JSON data from the API endpoints, you may navigate to the URL's in your browser or you can use an application like Postman to send a GET request to the application:
+   
+      GET > localhost:5000/restaurants/JSON
+      
+      GET > localhost:5000/restaurants/<int:restaurant_id>/menu/JSON
+      
+      GET > localhost:5000/restaurants/<int:restaurant_id>/menu/<int:menu_id>/JSON
+   
    The first endpoint, /restaurants/JSON will return serialized data from the database containing the name and id of
    each restaurant within the database's 'restaurant' table.
    
