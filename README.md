@@ -2,10 +2,10 @@
 
 ### Technology Used:
 - Flask
-- Python
+- Python 
 - SQLite
 - SQLAlchemy
-- Bootstrap
+- Bootstrap (imported CDN within html templates)
 
 Python-Flask web application to add restaurants and their menu items to an online repository with easy simple navigation. 
 
@@ -13,7 +13,15 @@ Python-Flask web application to add restaurants and their menu items to an onlin
 database. The application utilizes SQLAlchemy to query the tables within the database for quick and easy retrieval of the data
 to the UI where the Menu items you will see are specific to each restaurant. 
 
-### Execute/Launch Application:
+### Execute/Launch Application (Linux OS):
+  Before launching the application, make sure you have all dependencies and Python libraries installed on your machine, these can all be installed using pip:
+  
+    sudo apt-get install python-pip
+    
+    pip install python-flask
+    
+    pip install sqlalchemy
+
   First download or git clone this repo into the directory of your choice from the command line:
   
       user@computername:~$ git clone https://github.com/a-ridings13/restaurantMenu.git
@@ -38,7 +46,7 @@ to the UI where the Menu items you will see are specific to each restaurant.
        * Debugger is active!
        * Debugger PIN: 156-378-936
        
-  In your web browser, navigate to: http://0.0.0.0:5000/
+  In your web browser, navigate to: http://0.0.0.0:5000/  or http://localhost:5000/
 
 ### Table Relationships:
   The correlation between the Menu Items and the Restaurantsis created between the tables in the database_setup.py file where you
