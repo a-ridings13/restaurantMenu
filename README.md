@@ -13,6 +13,29 @@ Python-Flask web application to add restaurants and their menu items to an onlin
 database. The application utilizes SQLAlchemy to query the tables within the database for quick and easy retrieval of the data
 to the UI where the Menu items you will see are specific to each restaurant. 
 
+### Execute/Launch Application:
+  First download or git clone this repo into the directory of your choice from the command line.
+      user@computername:~$ git clone https://github.com/a-ridings13/restaurantMenu.git
+      
+  After cloning repo, cd into the restaurantMenu directory.
+      user@computername:~$ cd /restaurantMenu
+      
+  Execute the following commands in the terminal to launch the application locally:
+      user@computername:~$ python finalProject.py
+
+  Your terminal should now show the following message:
+       * Serving Flask app "finalProject" (lazy loading)
+       * Environment: production
+       WARNING: Do not use the development server in a production environment.
+       Use a production WSGI server instead.
+       * Debug mode: on
+       * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+       * Restarting with stat
+       * Debugger is active!
+       * Debugger PIN: 156-378-936
+       
+  In your web browser, navigate to: http://0.0.0.0:5000/
+
 ### Table Relationships:
   The correlation between the Menu Items and the Restaurantsis created between the tables in the database_setup.py file where you
 will see the line in the MenuItem class for the menu_item table, a column named "restaurant_id" is referencing the restaurant.id
